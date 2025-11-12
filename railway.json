@@ -1,0 +1,6 @@
+{
+  "build": {
+    "builder": "Python"
+  },
+  "start": "python run.py"
+}
