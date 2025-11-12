@@ -1,0 +1,35 @@
+/* pages/guest/guest.css */
+.neural-search-bar {
+  display: flex;
+  background: rgba(17, 24, 39, 0.9);
+  border-radius: 60px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+  backdrop-filter: blur(12px);
+}
+
+.neural-search-bar input {
+  flex: 1;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.neural-search-bar button {
+  background: transparent;
+  color: #00d4ff;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.neural-search-bar button:hover {
+  color: white;
+}
+
+.neural-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}

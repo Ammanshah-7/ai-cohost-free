@@ -1,0 +1,298 @@
+/* pages/home/home.css — NEURAL SEARCH DESIGN v9999.9 */
+
+/* === ROOT VARIABLES === */
+:root {
+  --cyan: #00d4ff;
+  --pink: #ff00c8;
+  --purple: #8b5cf6;
+  --dark: #0f0c29;
+  --card-bg: rgba(26, 26, 46, 0.85);
+  --input-bg: rgba(17, 24, 39, 0.9);
+  --border: rgba(0, 212, 255, 0.3);
+}
+
+/* === NEURAL HERO SECTION === */
+.neural-hero {
+  padding: 160px 0 120px;
+  text-align: center;
+  background: 
+    radial-gradient(circle at 30% 20%, rgba(0, 212, 255, 0.15), transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(255, 0, 200, 0.1), transparent 50%),
+    linear-gradient(135deg, #0f0c29 0%, #1a1a2e 50%, #24243e 100%);
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.neural-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%2300d4ff" opacity="0.3"><animate attributeName="r" values="2;6;2" dur="3s" repeatCount="indefinite"/></circle></svg>') 
+    repeat;
+  background-size: 80px 80px;
+  opacity: 0.08;
+  animation: floatParticles 25s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes floatParticles {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(-100px) translateX(20px); }
+}
+
+/* === AI TITLE === */
+.ai-title {
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, #FF385C, #00D4FF, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+  animation: titleGlow 3s ease-in-out infinite alternate;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes titleGlow {
+  from { text-shadow: 0 0 20px rgba(0, 212, 255, 0.2); }
+  to { text-shadow: 0 0 40px rgba(0, 212, 255, 0.5), 0 0 60px rgba(255, 0, 200, 0.3); }
+}
+
+/* === SUBTITLE === */
+.neural-hero p {
+  font-size: 1.3rem;
+  color: #94a3b8;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+/* === NEURAL SEARCH BAR === */
+.neural-search-bar {
+  display: flex;
+  max-width: 900px;
+  margin: 40px auto;
+  background: var(--card-bg);
+  border-radius: 60px;
+  overflow: hidden;
+  box-shadow: 
+    0 0 30px rgba(0, 212, 255, 0.3),
+    0 8px 32px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.neural-search-bar:hover {
+  box-shadow: 
+    0 0 40px rgba(0, 212, 255, 0.5),
+    0 12px 40px rgba(0, 0, 0, 0.5);
+  transform: translateY(-4px);
+}
+
+/* === SEARCH INPUT === */
+.neural-search-bar input {
+  flex: 1;
+  padding: 20px 24px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.neural-search-bar input::placeholder {
+  color: #64748b;
+  font-style: italic;
+}
+
+.neural-search-bar input:focus {
+  background: rgba(17, 24, 39, 0.9);
+  box-shadow: inset 0 0 0 2px var(--cyan);
+}
+
+/* === VOICE BUTTON === */
+#voice-search-btn {
+  padding: 0 20px;
+  color: var(--cyan);
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#voice-search-btn:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+#voice-search-btn.listening {
+  color: #10b981;
+  animation: pulse 1.5s infinite;
+}
+
+#voice-search-btn.recording {
+  color: #f59e0b;
+  animation: pulse 1s infinite;
+}
+
+/* === SEARCH BUTTON === */
+.neural-search-bar .neural-btn {
+  background: linear-gradient(45deg, var(--cyan), var(--pink));
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0 32px;
+  border: none;
+  border-radius: 0 60px 60px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.neural-search-bar .neural-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: 0.6s;
+}
+
+.neural-search-bar .neural-btn:hover::before {
+  left: 100%;
+}
+
+.neural-search-bar .neural-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
+}
+
+/* === VOICE STATUS === */
+#voice-status {
+  min-height: 24px;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+#voice-status.listening { color: #10b981; }
+#voice-status.recording { color: #f59e0b; animation: pulse 1s infinite; }
+#voice-status.thinking { color: #a855f7; animation: pulse 2s infinite; }
+
+/* === RESULTS GRID === */
+.neural-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.quantum-card {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+}
+
+.quantum-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--cyan);
+  box-shadow: 
+    0 16px 40px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 212, 255, 0.2);
+}
+
+.quantum-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.quantum-card:hover img {
+  transform: scale(1.05);
+}
+
+.quantum-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 1rem 1.5rem 0.5rem;
+  color: var(--cyan);
+}
+
+.quantum-card p {
+  margin: 0 1.5rem 1rem;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.quantum-card .price {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+  margin: 0.5rem 1.5rem;
+}
+
+.quantum-card .rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 1.5rem 1rem;
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+/* === ANIMATIONS === */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .ai-title { font-size: 3.8rem; }
+  .neural-search-bar { max-width: 750px; }
+}
+
+@media (max-width: 768px) {
+  .neural-hero { padding: 120px 0 80px; }
+  .ai-title { font-size: 3rem; }
+  .neural-search-bar { 
+    flex-direction: column; 
+    border-radius: 30px;
+    max-width: 90%;
+  }
+  .neural-search-bar input { 
+    border-radius: 30px 30px 0 0; 
+    padding: 18px;
+  }
+  .neural-search-bar .neural-btn {
+    border-radius: 0 0 30px 30px;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-title { font-size: 2.5rem; }
+  .neural-hero p { font-size: 1.1rem; }
+  .neural-search-bar { margin: 30px auto; }
+}

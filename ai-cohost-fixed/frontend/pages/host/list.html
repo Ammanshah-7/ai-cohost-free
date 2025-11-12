@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>List Property | SYED AI</title>
+
+  <!-- FONTS & ICONS -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/core/css/airbnb.css" />
+  <link rel="stylesheet" href="host.css" />
+  <link rel="stylesheet" href="list.css" />
+
+  <!-- AI BRAIN -->
+  <script src="/core/js/self-heal.js" defer></script>
+
+  <!-- SOCKET.IO -->
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <section class="container py-16">
+    <div class="text-center mb-12">
+      <h1 class="text-5xl font-bold text-cyan-400 mb-4">List Your Property</h1>
+      <p class="text-xl text-gray-300">AI sets price • 70% profit • Instant approval</p>
+    </div>
+
+    <div class="quantum-card max-w-5xl mx-auto p-8">
+      <form id="list-form" class="space-y-8">
+        <!-- BASIC INFO -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Property Title</label>
+            <input type="text" name="title" placeholder="e.g. Beachfront Villa with Infinity Pool" required 
+                   class="input-field" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Location</label>
+            <input type="text" name="location" placeholder="e.g. Jumeirah, Dubai" required 
+                   class="input-field" />
+          </div>
+        </div>
+
+        <!-- PRICE & AI -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Base Price (USD/night)</label>
+            <input type="number" name="price" placeholder="150" required min="50"
+                   class="input-field" />
+          </div>
+          <div class="flex items-end">
+            <button type="button" id="ai-price-btn" class="neural-btn w-full py-3 font-bold flex items-center justify-center gap-2">
+              <i class="fas fa-brain"></i> AI Pricing
+            </button>
+          </div>
+        </div>
+
+        <!-- AMENITIES -->
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-3">Amenities</label>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            ${['Pool', 'WiFi', 'AC', 'Kitchen', 'Parking', 'Gym', 'Pet-Friendly', 'Beach Access', 'Hot Tub', 'BBQ', 'Smart TV', 'Security'].map(a => `
+              <label class="amenity-checkbox">
+                <input type="checkbox" name="amenities" value="${a}" />
+                <span>${a}</span>
+              </label>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- IMAGES -->
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-2">Upload Images (Max 10)</label>
+          <div id="image-preview" class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-4"></div>
+          <input type="file" id="images" name="images" multiple accept="image/*" required 
+                 class="file-input" />
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-2">Description</label>
+          <textarea name="description" rows="5" placeholder="Highlight views, space, nearby attractions..." required
+                    class="input-field resize-none"></textarea>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="flex gap-4">
+          <button type="submit" class="neural-btn flex-1 py-4 text-lg font-bold">
+            <i class="fas fa-paper-plane"></i> List Property
+          </button>
+          <a href="dashboard.html" class="neural-btn bg-gray-700 hover:bg-gray-600 flex-1 py-4 text-lg font-bold text-center">
+            Cancel
+          </a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <div id="chat-widget" class="fixed bottom-6 right-6 z-50"></div>
+
+  <script src="list.js" defer></script>
+  <script src="/core/js/core.js" defer></script>
+</body>
+</html>

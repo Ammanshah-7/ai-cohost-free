@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Login | SYED CO-HOST</title>
+
+  <!-- FONTS & ICONS -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/core/css/airbnb.css" />
+  <link rel="stylesheet" href="auth.css" />
+
+  <!-- AI BRAIN: SELF-HEALING + PWA + ERROR LOGGING -->
+  <script src="/core/js/self-heal.js" defer></script>
+
+  <!-- SOCKET.IO FOR REAL-TIME AI -->
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+
+  <!-- HEADER AUTO-INJECTED BY self-heal.js -->
+  <div id="header"></div>
+
+  <!-- MAIN LOGIN CARD -->
+  <div class="container py-20">
+    <div class="quantum-card max-w-md mx-auto p-8 shadow-2xl">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl font-bold text-cyan-400 mb-2">AI Login</h1>
+        <p class="text-gray-400">Voice or Manual — Your Choice</p>
+      </div>
+
+      <!-- VOICE LOGIN BUTTON -->
+      <button 
+        id="voice-login-btn" 
+        class="neural-btn w-full py-4 text-lg font-semibold flex items-center justify-center gap-3 mb-6"
+        onclick="startVoiceLogin()"
+      >
+        <i class="fas fa-microphone"></i> Voice Login
+      </button>
+
+      <!-- MANUAL LOGIN FORM (FALLBACK) -->
+      <form id="manual-login-form" class="space-y-4">
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="Email" 
+          required 
+          class="w-full px-4 py-3 bg-gray-900 border border-cyan-500/50 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none text-white"
+        />
+        <input 
+          type="password" 
+          name="password" 
+          placeholder="Password" 
+          required 
+          class="w-full px-4 py-3 bg-gray-900 border border-cyan-500/50 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none text-white"
+        />
+        <button 
+          type="submit" 
+          class="neural-btn w-full py-3 font-bold"
+        >
+          Login
+        </button>
+      </form>
+
+      <!-- REGISTER LINK -->
+      <p class="text-center mt-6 text-gray-400">
+        New user? 
+        <a href="register.html" class="text-cyan-400 hover:text-cyan-300 underline">Create Account</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- AI CHAT WIDGET (FLOATING) -->
+  <div id="chat-widget" class="fixed bottom-6 right-6 z-50"></div>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Global API URL from self-heal.js
+    const API_URL = 'https://syedcohost.onrender.com';
+
+    // MANUAL LOGIN
+    document.getElementById('manual-login-form').onsubmit = async (e) => {
+      e.preventDefault();
+      const form = new FormData(e.target);
+      const res = await fetch(`${API_URL}/api/login`, {
+        method: 'POST',
+        body: JSON.stringify(Object.fromEntries(form)),
+        headers: { 'Content-Type': 'application/json' }
+      });
+      const data = await res.json();
+      if (data.token) {
+        localStorage.setItem('token', data.token);
+        alert('Login Success!');
+        window.location = '../host/property-owner-dashboard.html';
+      } else {
+        alert('Login Failed: ' + (data.error || 'Try again'));
+      }
+    };
+  </script>
+
+  <script src="/core/js/core.js" defer></script>
+  <script src="ai/neural-auth.js" defer></script>
+</body>
+</html>

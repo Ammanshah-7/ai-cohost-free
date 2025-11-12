@@ -1,0 +1,39 @@
+<!-- core/components/header.html -->
+<header class="quantum-header">
+  <div class="container header-flex">
+    <a href="../pages/intro/" class="logo">SYED CO-HOST</a>
+    <nav class="nav-links">
+      <a href="../pages/home/">AI Search</a>
+      <a href="../pages/host/dashboard.html">Host</a>
+      <a href="../pages/auth/login.html">Login</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  (function () {
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      toggle.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+      localStorage.setItem('site-theme', document.documentElement.getAttribute('data-theme'));
+    });
+    // load saved theme
+    const saved = localStorage.getItem('site-theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+  })();
+</script>
+
+<style>
+.quantum-header{ padding:14px 12px; background:transparent; }
+.header-flex{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.logo{ font-weight:700; letter-spacing:0.6px; }
+.nav-links a{ margin:0 8px; text-decoration:none; }
+.theme-toggle{ background:transparent; border:0; cursor:pointer; font-size:1.05rem; padding:6px; }
+</style>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Host Dashboard | SYED CO-HOST</title>
+
+  <!-- FONTS & ICONS -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/core/css/airbnb.css" />
+  <link rel="stylesheet" href="host.css" />
+
+  <!-- PWA MANIFEST -->
+  <link rel="manifest" href="/static/manifest.json" />
+
+  <!-- AI BRAIN: SELF-HEALING + PWA + ERROR LOGGING -->
+  <script src="/core/js/self-heal.js" defer></script>
+
+  <!-- SOCKET.IO FOR REAL-TIME STATS -->
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+
+  <!-- HEADER AUTO-INJECTED BY self-heal.js -->
+  <div id="header"></div>
+
+  <!-- DASHBOARD HERO -->
+  <section class="container py-16">
+    <div class="text-center mb-12">
+      <h1 class="text-5xl md:text-6xl font-bold text-cyan-400 mb-4">
+        AI Host Dashboard
+      </h1>
+      <p class="text-xl text-gray-300">Real-time earnings • AI-optimized pricing • 70% profit</p>
+    </div>
+
+    <!-- OWNER PROFILE CARD -->
+    <div class="quantum-card max-w-4xl mx-auto p-8 mb-12 text-center">
+      <div class="flex items-center justify-center gap-6 flex-wrap">
+        <img src="/static/images/owner.jpg" alt="Owner" class="w-24 h-24 rounded-full border-4 border-cyan-500 shadow-xl" />
+        <div class="text-left">
+          <h2 class="text-2xl font-bold text-white">Syed Amman Qadir Bukhari</h2>
+          <p class="text-gray-300">21 yrs | NUML BSCS 3rd Semester</p>
+          <p class="text-cyan-400 font-medium">70% Owner | 30% SYED AI</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIVE STATS GRID -->
+    <div class="neural-grid grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <div class="quantum-card p-8 text-center group hover:scale-105 transition-transform">
+        <i class="fas fa-calendar-check text-5xl text-cyan-400 mb-4 group-hover:animate-pulse"></i>
+        <h3 class="text-xl font-semibold text-gray-300 mb-2">Total Bookings</h3>
+        <p id="bookings-count" class="text-4xl font-bold text-white">42</p>
+        <p class="text-sm text-green-400 mt-2">+12% this week</p>
+      </div>
+
+      <div class="quantum-card p-8 text-center group hover:scale-105 transition-transform">
+        <i class="fas fa-dollar-sign text-5xl text-green-400 mb-4 group-hover:animate-pulse"></i>
+        <h3 class="text-xl font-semibold text-gray-300 mb-2">Total Revenue</h3>
+        <p id="revenue-total" class="text-4xl font-bold text-white">$12,400</p>
+        <p class="text-sm text-green-400 mt-2">+18% this month</p>
+      </div>
+
+      <div class="quantum-card p-8 text-center group hover:scale-105 transition-transform">
+        <i class="fas fa-hand-holding-usd text-5xl text-yellow-400 mb-4 group-hover:animate-pulse"></i>
+        <h3 class="text-xl font-semibold text-gray-300 mb-2">Your Profit (70%)</h3>
+        <p id="owner-profit" class="text-4xl font-bold text-white">$8,680</p>
+        <p class="text-sm text-cyan-400 mt-2">AI takes 30% → $3,720</p>
+      </div>
+    </div>
+
+    <!-- AI INSIGHTS -->
+    <div class="quantum-card p-8 mb-12">
+      <h3 class="text-2xl font-bold text-cyan-400 mb-6 flex items-center gap-3">
+        <i class="fas fa-brain"></i> AI Insights & Recommendations
+      </h3>
+      <div id="ai-insights" class="space-y-4">
+        <div class="flex items-start gap-3 text-gray-300">
+          <i class="fas fa-lightbulb text-yellow-400 mt-1"></i>
+          <p><strong>Raise price by $25/night</strong> → High demand in Dubai this weekend.</p>
+        </div>
+        <div class="flex items-start gap-3 text-gray-300">
+          <i class="fas fa-chart-line text-green-400 mt-1"></i>
+          <p><strong>85% occupancy rate</strong> → You're outperforming 92% of hosts.</p>
+        </div>
+        <div class="flex items-start gap-3 text-gray-300">
+          <i class="fas fa-robot text-purple-400 mt-1"></i>
+          <p><strong>AI Auto-Response</strong> enabled → 97% guest satisfaction.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="flex flex-wrap justify-center gap-6">
+      <a href="list.html" class="neural-btn px-8 py-4 text-lg font-bold flex items-center gap-3">
+        <i class="fas fa-plus-circle"></i> List New Property
+      </a>
+      <a href="messages.html" class="neural-btn px-8 py-4 text-lg font-bold flex items-center gap-3">
+        <i class="fas fa-comments"></i> Guest Messages <span class="badge">3</span>
+      </a>
+      <a href="calendar.html" class="neural-btn px-8 py-4 text-lg font-bold flex items-center gap-3">
+        <i class="fas fa-calendar-alt"></i> View Calendar
+      </a>
+    </div>
+  </section>
+
+  <!-- AI CHAT WIDGET -->
+  <div id="chat-widget" class="fixed bottom-6 right-6 z-50"></div>
+
+  <!-- SCRIPTS -->
+  <script>
+    const API_URL = 'https://syedcohost.onrender.com';
+    let socket;
+
+    // INIT REAL-TIME DASHBOARD
+    function initDashboard() {
+      socket = io(API_URL, { transports: ['websocket'] });
+
+      socket.on('connect', () => {
+        console.log('Dashboard: AI Connected');
+        showWidget('AI Dashboard Live', 'success');
+      });
+
+      socket.on('stats_update', (data) => {
+        updateStats(data);
+      });
+
+      socket.on('ai_insight', (insight) => {
+        addInsight(insight);
+      });
+
+      // Request initial data
+      socket.emit('dashboard_join', { role: 'host' });
+    }
+
+    function updateStats(data) {
+      document.getElementById('bookings-count').textContent = data.bookings;
+      document.getElementById('revenue-total').textContent = `$${data.revenue.toLocaleString()}`;
+      document.getElementById('owner-profit').textContent = `$${data.profit.toLocaleString()}`;
+    }
+
+    function addInsight(insight) {
+      const container = document.getElementById('ai-insights');
+      const div = document.createElement('div');
+      div.className = 'flex items-start gap-3 text-gray-300 animate-fadeIn';
+      div.innerHTML = `
+        <i class="fas fa-sparkles text-purple-400 mt-1"></i>
+        <p><strong>${insight.title}</strong> → ${insight.message}</p>
+      `;
+      container.prepend(div);
+      setTimeout(() => div.remove(), 10000);
+    }
+
+    function showWidget(message, type = 'info') {
+      const widget = document.getElementById('chat-widget');
+      const colors = { success: '#10b981', info: '#06b6d4', error: '#ef4444' };
+      widget.innerHTML = `
+        <div class="bg-gray-900 p-4 rounded-xl shadow-2xl text-white text-sm font-medium flex items-center gap-2 animate-pulse"
+             style="background: ${colors[type]};">
+          <i class="fas fa-brain"></i> ${message}
+        </div>`;
+      setTimeout(() => widget.innerHTML = '', 3000);
+    }
+
+    // Start dashboard
+    document.addEventListener('DOMContentLoaded', initDashboard);
+  </script>
+
+  <script src="/core/js/core.js" defer></script>
+</body>
+</html>

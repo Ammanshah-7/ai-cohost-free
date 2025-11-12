@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: syedcohost-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python run.py
+    envVars:
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      JAZZCASH_IBAN: ${JAZZCASH_IBAN}
+      PROFIT_SHARE: "0.7"

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Owner Dashboard | SYED AI</title>
+
+  <!-- FONTS & ICONS -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Orbitron:wght@700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../core/css/airbnb.css" />
+  <link rel="stylesheet" href="host.css" />
+  <link rel="stylesheet" href="owner-dashboard.css" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="../static/manifest.json" />
+
+  <!-- AI BRAIN -->
+  <script src="../core/js/self-heal.js" defer></script>
+
+  <!-- SOCKET.IO -->
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div id="header"></div>
+
+  <!-- OWNER HERO -->
+  <section class="owner-hero py-20">
+    <div class="container text-center">
+      <h1 class="empire-title text-6xl md:text-8xl font-bold mb-4">
+        OWNER <span class="gradient-empire">EMPIRE</span>
+      </h1>
+      <p class="text-2xl text-cyan-300 mb-8">30% Platform Profit • AI-Powered • Global Scale</p>
+
+      <!-- OWNER AVATAR -->
+      <div class="flex justify-center mb-12">
+        <div class="relative">
+          <img src="../static/images/owner.jpg" alt="Owner" class="w-32 h-32 rounded-full border-4 border-cyan-500 shadow-2xl" />
+          <div class="absolute -bottom-2 -right-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold">
+            OWNER
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE STATS -->
+  <section class="container py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      <div class="quantum-stat p-8 text-center group">
+        <i class="fas fa-coins text-5xl text-yellow-400 mb-4 group-hover:animate-pulse"></i>
+        <h3 class="text-xl font-bold text-gray-300 mb-2">Total Revenue</h3>
+        <p id="total-revenue" class="text-4xl font-bold text-white">₨1,498,400</p>
+        <p class="text-sm text-green-400 mt-2">+28% this month</p>
+      </div>
+
+      <div class="quantum-stat p-8 text-center group">
+        <i class="fas fa-hand-holding-usd text-5xl text-green-400 mb-4 group-hover:animate-pulse"></i>
+        <h3 class="text-xl font-bold text-gray-300 mb-2">Platform Share (30%)</h3>
+        <p id="platform-profit" class="text-4xl font-bold text-white">₨449,520</p>
+        <p class="text-sm text-cyan-400 mt-2">₨14,984/day</p>
+      </div>
+
+      <div class="quantum-stat p-8 text-center group">
+        <i class="fas fa-users text-5xl text-purple-400 mb-4 group-hover:animate-pulse"></i>
+        <h3 class="text-xl font-bold text-gray-300 mb-2">Active Hosts</h3>
+        <p id="active-hosts" class="text-4xl font-bold text-white">47</p>
+        <p class="text-sm text-green-400 mt-2">+5 new this week</p>
+      </div>
+
+      <div class="quantum-stat p-8 text-center group">
+        <i class="fas fa-trophy text-5xl text-yellow-500 mb-4 group-hover:animate-pulse"></i>
+        <h3 class="text-xl font-bold text-gray-300 mb-2">SEO Rank</h3>
+        <p class="text-4xl font-bold text-white">#1</p>
+        <p class="text-sm text-cyan-400 mt-2">Pakistan • UAE • KSA</p>
+      </div>
+    </div>
+
+    <!-- AI INSIGHTS -->
+    <div class="quantum-card p-10 mb-16">
+      <h3 class="text-3xl font-bold text-cyan-400 mb-8 flex items-center gap-3">
+        <i class="fas fa-brain"></i> AI Empire Insights
+      </h3>
+      <div id="ai-insights" class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+
+    <!-- EMPIRE ACTIONS -->
+    <div class="text-center">
+      <div class="flex flex-wrap justify-center gap-6">
+        <button onclick="scaleEmpire()" class="empire-btn px-12 py-5 text-xl font-bold flex items-center gap-3">
+          <i class="fas fa-rocket"></i> Scale to 1000 Properties
+        </button>
+        <button onclick="withdraw()" class="empire-btn bg-gradient-to-r from-green-500 to-emerald-600 px-12 py-5 text-xl font-bold flex items-center gap-3">
+          <i class="fas fa-wallet"></i> Withdraw Profit
+        </button>
+        <a href="../reports/owner.html" class="empire-btn bg-gradient-to-r from-purple-500 to-pink-600 px-12 py-5 text-xl font-bold flex items-center gap-3">
+          <i class="fas fa-chart-line"></i> Full Reports
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI CHAT WIDGET -->
+  <div id="chat-widget" class="fixed bottom-6 right-6 z-50"></div>
+
+  <!-- SCRIPTS -->
+  <script src="owner-dashboard.js" defer></script>
+  <script src="../core/js/core.js" defer></script>
+</body>
+</html>

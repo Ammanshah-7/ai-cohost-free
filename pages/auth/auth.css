@@ -1,0 +1,263 @@
+/* pages/auth/auth.css — AI AUTH DESIGN v9999.9 */
+
+/* === ROOT & TYPOGRAPHY === */
+:root {
+  --cyan: #00d4ff;
+  --pink: #ff00c8;
+  --dark: #0f0c29;
+  --card: rgba(17, 24, 39, 0.85);
+  --input: #1a1a2e;
+  --border: rgba(0, 212, 255, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, var(--dark), #16213e);
+  color: #e0e7ff;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* === QUANTUM CARD === */
+.quantum-card {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 212, 255, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.quantum-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.1), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.quantum-card:hover::before {
+  opacity: 1;
+}
+
+.quantum-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 16px 48px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(0, 212, 255, 0.2);
+}
+
+/* === HEADINGS === */
+.quantum-card h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--cyan), var(--pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.quantum-card p {
+  color: #94a3b8;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* === INPUT FIELDS === */
+.quantum-card input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  margin: 0.75rem 0;
+  background: var(--input);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.quantum-card input::placeholder {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.quantum-card input:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.2);
+  transform: scale(1.02);
+  background: #16213e;
+}
+
+/* === NEURAL BUTTON === */
+.neural-btn {
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: linear-gradient(45deg, var(--cyan), var(--pink));
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+.neural-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: 0.6s;
+}
+
+.neural-btn:hover::before {
+  left: 100%;
+}
+
+.neural-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
+}
+
+.neural-btn:active {
+  transform: translateY(0);
+}
+
+/* === VOICE BUTTON STATES === */
+.neural-btn.listening {
+  background: linear-gradient(45deg, #10b981, #34d399);
+  animation: pulse 1.5s infinite;
+}
+
+.neural-btn.recording {
+  background: linear-gradient(45deg, #f59e0b, #fbbf24);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 212, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
+}
+
+/* === CHECKBOX & TERMS === */
+.quantum-card .flex {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.quantum-card input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: var(--cyan);
+  cursor: pointer;
+}
+
+.quantum-card label {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.quantum-card label a {
+  color: var(--cyan);
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.quantum-card label a:hover {
+  color: var(--pink);
+}
+
+/* === LINKS === */
+.quantum-card a {
+  color: var(--cyan);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.quantum-card a:hover {
+  color: var(--pink);
+  text-decoration: underline;
+}
+
+/* === CHAT WIDGET === */
+#chat-widget {
+  max-width: 300px;
+}
+
+#chat-widget > div {
+  background: rgba(15, 12, 41, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem;
+  font-size: 0.95rem;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 640px) {
+  .quantum-card {
+    margin: 1rem;
+    padding: 2rem;
+  }
+  
+  .quantum-card h1 {
+    font-size: 2rem;
+  }
+  
+  .neural-btn {
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quantum-card {
+    padding: 1.5rem;
+  }
+  
+  .quantum-card input {
+    padding: 0.9rem;
+  }
+}

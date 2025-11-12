@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="Search Results">Search Results</title>
+
+  <!-- FONTS & ICONS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CORE -->
+  <link rel="stylesheet" href="../partials/partials.css" />
+  <link rel="stylesheet" href="/core/css/airbnb.css" />
+
+  <!-- PAGE CSS -->
+  <link rel="stylesheet" href="results.css" />
+
+  <!-- AI BRAIN -->
+  <script src="/core/js/self-heal.js" defer></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div id="header"></div>
+
+  <!-- SEARCH RESULTS -->
+  <section class="container py-16">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-4xl font-bold text-cyan-400 mb-8" data-i18n="Search Results">Search Results</h1>
+
+      <!-- FILTERS -->
+      <div class="flex flex-wrap gap-3 mb-8">
+        <button class="neural-btn ghost" onclick="filter('all')">All</button>
+        <button class="neural-btn ghost" onclick="filter('villa')">Villas</button>
+        <button class="neural-btn ghost" onclick="filter('apartment')">Apartments</button>
+        <button class="neural-btn ghost" onclick="filter('dubai')">Dubai</button>
+      </div>
+
+      <!-- RESULTS GRID -->
+      <div id="results-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- JS WILL FILL THIS -->
+      </div>
+
+      <!-- NO RESULTS -->
+      <div id="no-results" class="hidden text-center py-16">
+        <i class="fas fa-search text-6xl text-gray-600 mb-4"></i>
+        <p class="text-xl text-gray-400" data-i18n="No properties found">No properties found</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAT WIDGET -->
+  <div id="chat-widget" class="fixed bottom-6 right-6 z-50"></div>
+
+  <!-- SCRIPTS -->
+  <script src="../partials/partials.js" defer></script>
+  <script src="results.js" defer></script>
+  <script src="/core/js/core.js" defer></script>
+  <script src="/core/js/language.js" defer></script>
+</body>
+</html>

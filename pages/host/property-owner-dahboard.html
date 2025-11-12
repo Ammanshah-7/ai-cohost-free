@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Owner Dashboard | SYED AI</title>
+
+  <!-- FONTS & ICONS -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Orbitron:wght@700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../core/css/airbnb.css" />
+  <link rel="stylesheet" href="host.css" />
+  <link rel="stylesheet" href="property-owner-dashboard.css" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="../static/manifest.json" />
+
+  <!-- AI BRAIN -->
+  <script src="../core/js/self-heal.js" defer></script>
+
+  <!-- SOCKET.IO -->
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div id="header"></div>
+
+  <!-- HERO -->
+  <section class="property-hero py-20">
+    <div class="container text-center">
+      <h1 class="property-title text-6xl md:text-8xl font-bold mb-4">
+        PROPERTY <span class="gradient-property">EMPIRE</span>
+      </h1>
+      <p class="text-2xl text-cyan-300 mb-8">70% Profit • AI-Optimized • Zero Effort</p>
+
+      <!-- OWNER PROFILE -->
+      <div class="flex justify-center mb-12">
+        <div class="relative group">
+          <img src="../static/images/owner.jpg" alt="Owner" class="w-32 h-32 rounded-full border-4 border-cyan-500 shadow-2xl group-hover:scale-110 transition-transform" />
+          <div class="absolute -bottom-2 -right-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-1 rounded-full text-sm font-bold">
+            70% OWNER
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE STATS -->
+  <section class="container py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      <div class="quantum-stat p-8 text-center group">
+        <i class="fas fa-home text-5xl text-cyan-400 mb-4 group-hover:animate-pulse"></i>
+        <h3 class="text-xl font-bold text-gray-300 mb-2">My Properties</h3>
+        <p id="property-count" class="text-4xl font-bold text-white">8</p>
+        <p class="text-sm text-green-400 mt-2">+2 this month</p>
+      </div>
+
+      <div class="quantum-stat p-8 text-center group">
+        <i class="fas fa-calendar-check text-5xl text-green-400 mb-4 group-hover:animate-pulse"></i>
+        <h3 class="text-xl font-bold text-gray-300 mb-2">Total Bookings</h3>
+        <p id="booking-count" class="text-4xl font-bold text-white">142</p>
+        <p class="text-sm text-cyan-400 mt-2">92% occupancy</p>
+      </div>
+
+      <div class="quantum-stat p-8 text-center group">
+        <i class="fas fa-dollar-sign text-5xl text-yellow-400 mb-4 group-hover:animate-pulse"></i>
+        <h3 class="text-xl font-bold text-gray-300 mb-2">Total Revenue</h3>
+        <p id="total-revenue" class="text-4xl font-bold text-white">$48,200</p>
+        <p class="text-sm text-green-400 mt-2">+32% vs last month</p>
+      </div>
+
+      <div class="quantum-stat p-8 text-center group">
+        <i class="fas fa-hand-holding-usd text-5xl text-emerald-400 mb-4 group-hover:animate-pulse"></i>
+        <h3 class="text-xl font-bold text-gray-300 mb-2">Your Profit (70%)</h3>
+        <p id="owner-profit" class="text-4xl font-bold text-white">$33,740</p>
+        <p class="text-sm text-cyan-400 mt-2">$1,124/day</p>
+      </div>
+    </div>
+
+    <!-- AI INSIGHTS -->
+    <div class="quantum-card p-10 mb-16">
+      <h3 class="text-3xl font-bold text-cyan-400 mb-8 flex items-center gap-3">
+        <i class="fas fa-brain"></i> AI Property Insights
+      </h3>
+      <div id="ai-insights" class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="text-center">
+      <div class="flex flex-wrap justify-center gap-6">
+        <a href="list.html" class="empire-btn px-12 py-5 text-xl font-bold flex items-center gap-3">
+          <i class="fas fa-plus-circle"></i> List New Property
+        </a>
+        <button onclick="withdrawProfit()" class="empire-btn bg-gradient-to-r from-green-500 to-emerald-600 px-12 py-5 text-xl font-bold flex items-center gap-3">
+          <i class="fas fa-wallet"></i> Withdraw $33,740
+        </button>
+        <a href="calendar.html" class="empire-btn bg-gradient-to-r from-purple-500 to-pink-600 px-12 py-5 text-xl font-bold flex items-center gap-3">
+          <i class="fas fa-calendar-alt"></i> View Calendar
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI CHAT WIDGET -->
+  <div id="chat-widget" class="fixed bottom-6 right-6 z-50"></div>
+
+  <!-- SCRIPTS -->
+  <script src="property-owner-dashboard.js" defer></script>
+  <script src="../core/js/core.js" defer></script>
+</body>
+</html>

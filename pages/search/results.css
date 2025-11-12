@@ -1,0 +1,70 @@
+/* pages/search/results.css — v9999.9 | PURE CSS | NO ERRORS */
+.property-card {
+  background: #1e293b;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.property-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+  border-color: #00d4ff;
+}
+
+.property-img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+}
+
+.property-info {
+  padding: 1rem;
+}
+
+.property-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.property-location {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.property-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #06b6d4;
+}
+
+.property-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(6, 182, 212, 0.3);
+  color: #67e8f9;
+  border-radius: 9999px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .property-img {
+    height: 10rem;
+  }
+}

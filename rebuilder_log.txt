@@ -1,0 +1,161 @@
+✨ AI Empire Fixed — v1.0 — Made with ❤️ and a bit of magic ✨
+Generated: 2025-11-12T10:16:06.090173Z
+Actions:
+[2025-11-12 10:16:06] Starting full rebuild process (non-destructive).
+[2025-11-12 10:16:06] Target fixed copy: D:\ai-cohost-free\ai-cohost-fixed
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\backend
+[2025-11-12 10:16:06] Created placeholder: D:\ai-cohost-free\ai-cohost-fixed\backend\server.py
+[2025-11-12 10:16:06] Created placeholder: D:\ai-cohost-free\ai-cohost-fixed\backend\run.py
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\backend\api
+[2025-11-12 10:16:06] Created placeholder: D:\ai-cohost-free\ai-cohost-fixed\backend\api\__init__.py
+[2025-11-12 10:16:06] Created placeholder: D:\ai-cohost-free\ai-cohost-fixed\backend\api\routes_auth.py
+[2025-11-12 10:16:06] Created placeholder: D:\ai-cohost-free\ai-cohost-fixed\backend\api\routes_property.py
+[2025-11-12 10:16:06] Created placeholder: D:\ai-cohost-free\ai-cohost-fixed\backend\api\routes_payments.py
+[2025-11-12 10:16:06] Created placeholder: D:\ai-cohost-free\ai-cohost-fixed\backend\api\models.py
+[2025-11-12 10:16:06] Created placeholder: D:\ai-cohost-free\ai-cohost-fixed\backend\api\utils.py
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\backend\db
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\core\components
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\core\css
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\home\ai
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\home
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\auth
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\ai
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\guest
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\payments\ai
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\payments
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\property\ai
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\property
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\partials
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\react\src\styles
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\react\src
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\static\images
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\static\uploads
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\frontend\static\icons
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\sw.js
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\offline.html
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\offline.css
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\offline.js
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\vite.config.js
+[2025-11-12 10:16:06] Ensured directory: D:\ai-cohost-free\ai-cohost-fixed\README.md
+[2025-11-12 10:16:06] Copied: D:\ai-cohost-free\box.classList.toggle(hidden)) -> D:\ai-cohost-free\ai-cohost-fixed\frontend\box.classList.toggle(hidden))
+[2025-11-12 10:16:06] Copied: D:\ai-cohost-free\document.getElementById(header).innerHTML -> D:\ai-cohost-free\ai-cohost-fixed\frontend\document.getElementById(header).innerHTML
+[2025-11-12 10:16:06] Copied: D:\ai-cohost-free\FINAL-PERFECT-AIRBNB.bat -> D:\ai-cohost-free\ai-cohost-fixed\frontend\FINAL-PERFECT-AIRBNB.bat
+[2025-11-12 10:16:06] Copied: D:\ai-cohost-free\netlify.toml -> D:\ai-cohost-free\ai-cohost-fixed\frontend\netlify.toml
+[2025-11-12 10:16:06] Copied: D:\ai-cohost-free\offline.css -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\offline.css
+[2025-11-12 10:16:06] Copied: D:\ai-cohost-free\offline.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\offline.html
+[2025-11-12 10:16:06] Injected core assets into D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\offline.html
+[2025-11-12 10:16:06] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\offline.html
+[2025-11-12 10:16:06] Copied: D:\ai-cohost-free\offline.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\offline.js
+[2025-11-12 10:16:06] Copied: D:\ai-cohost-free\render,yaml -> D:\ai-cohost-free\ai-cohost-fixed\frontend\render,yaml
+[2025-11-12 10:16:06] Copied: D:\ai-cohost-free\requirements.txt -> D:\ai-cohost-free\ai-cohost-fixed\frontend\requirements.txt
+[2025-11-12 10:16:06] Copied (duplicate-handled): D:\ai-cohost-free\run.py -> D:\ai-cohost-free\ai-cohost-fixed\backend\run_dup1.py
+[2025-11-12 10:16:06] Copied: D:\ai-cohost-free\sw.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\sw.js
+[2025-11-12 10:16:06] Copied: D:\ai-cohost-free\vite.config.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\vite.config.js
+[2025-11-12 10:16:06] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\vite.config.js
+[2025-11-12 10:16:06] Copied: D:\ai-cohost-free\{ -> D:\ai-cohost-free\ai-cohost-fixed\frontend\{
+[2025-11-12 10:16:06] Copied: D:\ai-cohost-free\api\security.py -> D:\ai-cohost-free\ai-cohost-fixed\backend\security.py
+[2025-11-12 10:16:06] Copied (duplicate-handled): D:\ai-cohost-free\api\server.py -> D:\ai-cohost-free\ai-cohost-fixed\backend\server_dup1.py
+[2025-11-12 10:16:06] Copied: D:\ai-cohost-free\core\components\chat-message.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\components\chat-message.html
+[2025-11-12 10:16:06] Copied: D:\ai-cohost-free\core\components\chat-widget.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\components\chat-widget.html
+[2025-11-12 10:16:06] Copied: D:\ai-cohost-free\core\components\footer.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\components\footer.html
+[2025-11-12 10:16:06] Copied: D:\ai-cohost-free\core\components\header.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\components\header.html
+[2025-11-12 10:16:07] Injected core assets into D:\ai-cohost-free\ai-cohost-fixed\frontend\core\components\header.html
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\core\components\neural-loader.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\components\neural-loader.html
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\core\css\Airbnb.css -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\css\Airbnb.css
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\core\js\chat-ai.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\chat-ai.js
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\core\js\core.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\core.js
+[2025-11-12 10:16:07] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\core.js
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\core\js\language.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\language.js
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\core\js\nav.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\nav.js
+[2025-11-12 10:16:07] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\nav.js
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\core\js\self-heal.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\self-heal.js
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\core\react\App.jsx -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\App.jsx
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\core\react\index.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\index.html
+[2025-11-12 10:16:07] Injected core assets into D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\index.html
+[2025-11-12 10:16:07] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\index.html
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\core\react\main.jsx -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\ai\main.jsx
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\core\react\PropertyCard.jsx -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\PropertyCard.jsx
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\pages\auth\auth.css -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\auth\auth.css
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\pages\auth\auth.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\auth.js
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\pages\auth\login.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\auth\login.html
+[2025-11-12 10:16:07] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\auth\login.html
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\pages\auth\register.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\auth\register.html
+[2025-11-12 10:16:07] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\auth\register.html
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\pages\auth\ai\neural-auth.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\ai\neural-auth.js
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\pages\guests\bookings.css -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\bookings.css
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\pages\guests\bookings.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\bookings.html
+[2025-11-12 10:16:07] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\bookings.html
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\pages\guests\bookings.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\bookings.js
+[2025-11-12 10:16:07] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\bookings.js
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\pages\guests\guest.css -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\guest.css
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\pages\guests\guest.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\guest.js
+[2025-11-12 10:16:07] Copied: D:\ai-cohost-free\pages\guests\search.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\search.html
+[2025-11-12 10:16:07] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\search.html
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\home\home.css -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\home.css
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\home\home.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\home.js
+[2025-11-12 10:16:08] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\home.js
+[2025-11-12 10:16:08] Copied (duplicate-handled): D:\ai-cohost-free\pages\home\index.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\index_dup1.html
+[2025-11-12 10:16:08] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\index_dup1.html
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\home\ai\neural-search-ai.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\ai\neural-search-ai.js
+[2025-11-12 10:16:08] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\ai\neural-search-ai.js
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\host\dashboard.css -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\dashboard.css
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\host\dashboard.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\dashboard.html
+[2025-11-12 10:16:08] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\dashboard.html
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\host\dashboard.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\dashboard.js
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\host\host.css -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\host.css
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\host\host.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\host.html
+[2025-11-12 10:16:08] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\host.html
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\host\host.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\host.js
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\host\list.css -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\list.css
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\host\list.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\list.html
+[2025-11-12 10:16:08] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\list.html
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\host\list.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\list.js
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\host\owner-dashboard.css -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\owner-dashboard.css
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\host\owner-dashboard.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\owner-dashboard.html
+[2025-11-12 10:16:08] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\owner-dashboard.html
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\host\owner-dashboard.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\owner-dashboard.js
+[2025-11-12 10:16:08] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\owner-dashboard.js
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\host\property-owner-dahboard.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\property-owner-dahboard.html
+[2025-11-12 10:16:08] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\property-owner-dahboard.html
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\host\property-owner-dashbaord.css -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\property-owner-dashbaord.css
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\host\property-owner-dashboard.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\property-owner-dashboard.js
+[2025-11-12 10:16:08] Copied: D:\ai-cohost-free\pages\host\ai\pricing-ai.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\ai\pricing-ai.js
+[2025-11-12 10:16:08] Copied (duplicate-handled): D:\ai-cohost-free\pages\intro\index.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\index_dup2.html
+[2025-11-12 10:16:08] Injected core assets into D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\index_dup2.html
+[2025-11-12 10:16:08] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\index_dup2.html
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\pages\intro\intro.css -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\intro.css
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\pages\intro\intro.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\intro.js
+[2025-11-12 10:16:09] Copied (duplicate-handled): D:\ai-cohost-free\pages\partials\footer.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\components\footer_dup1.html
+[2025-11-12 10:16:09] Copied (duplicate-handled): D:\ai-cohost-free\pages\partials\header.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\components\header_dup1.html
+[2025-11-12 10:16:09] Injected core assets into D:\ai-cohost-free\ai-cohost-fixed\frontend\core\components\header_dup1.html
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\pages\partials\partials.css -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\partials.css
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\pages\partials\partials.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\partials.js
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\pages\payments\checkout.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\checkout.html
+[2025-11-12 10:16:09] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\checkout.html
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\pages\payments\payments.css -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\payments.css
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\pages\payments\payments.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\payments.js
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\pages\payments\ai\currency.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\currency.js
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\pages\payments\ai\fraud-detection.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\fraud-detection.js
+[2025-11-12 10:16:09] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\fraud-detection.js
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\pages\payments\ai\wu-to-jc.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\wu-to-jc.js
+[2025-11-12 10:16:09] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\wu-to-jc.js
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\pages\property\property-view.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\property-view.html
+[2025-11-12 10:16:09] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\property-view.html
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\pages\property\property.css -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\property.css
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\pages\property\property.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\property.js
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\pages\property\ai\virtual-tour.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\virtual-tour.js
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\pages\search\results.css -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\results.css
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\pages\search\results.html -> D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\results.html
+[2025-11-12 10:16:09] Normalized paths in D:\ai-cohost-free\ai-cohost-fixed\frontend\pages\host\results.html
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\pages\search\results.js -> D:\ai-cohost-free\ai-cohost-fixed\frontend\core\js\results.js
+[2025-11-12 10:16:09] Copied: D:\ai-cohost-free\static\manifest.json -> D:\ai-cohost-free\ai-cohost-fixed\frontend\static\manifest.json
+[2025-11-12 10:16:09] Scanning for duplicates and cleanup suggestions (no deletions).
+[2025-11-12 10:16:09] Appended API stubs to D:\ai-cohost-free\ai-cohost-fixed\backend\server.py
+[2025-11-12 10:16:09] Created SQLite placeholder at D:\ai-cohost-free\ai-cohost-fixed\backend\db\data.sqlite3
+[2025-11-12 10:16:09] Created sample _redirects: D:\ai-cohost-free\ai-cohost-fixed\frontend\_redirects
+[2025-11-12 10:16:09] Created sample render.yaml: D:\ai-cohost-free\ai-cohost-fixed\backend\render.yaml
+[2025-11-12 10:16:09] Rebuild finished. Fixed copy located at: D:\ai-cohost-free\ai-cohost-fixed
+[2025-11-12 10:16:09] Log will be written to D:\ai-cohost-free\rebuilder_log.txt

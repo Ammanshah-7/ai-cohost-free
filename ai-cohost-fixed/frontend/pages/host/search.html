@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guest Search | SYED AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/core/css/airbnb.css" />
+  <link rel="stylesheet" href="guest.css" />
+  <script src="/core/js/self-heal.js" defer></script>
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <section class="container py-16">
+    <div class="text-center mb-12">
+      <h1 class="text-5xl font-bold text-cyan-400 mb-4">Find Your Stay</h1>
+      <p class="text-xl text-gray-300">AI matches you with perfect homes</p>
+    </div>
+
+    <div class="neural-search-bar max-w-4xl mx-auto mb-12">
+      <input type="text" id="guest-search" placeholder="Say: 'Villa in Dubai, 3 nights, pool'" class="flex-1" />
+      <button id="voice-btn" onclick="toggleVoice()" class="px-4">
+        <i class="fas fa-microphone"></i>
+      </button>
+      <button onclick="search()" class="neural-btn px-8">Search</button>
+    </div>
+
+    <div id="results" class="neural-grid"></div>
+  </section>
+
+  <div id="chat-widget" class="fixed bottom-6 right-6 z-50"></div>
+
+  <script src="guest.js" defer></script>
+  <script src="/core/js/core.js" defer></script>
+</body>
+</html>

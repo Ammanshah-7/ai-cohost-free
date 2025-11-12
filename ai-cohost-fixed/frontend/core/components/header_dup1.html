@@ -1,0 +1,58 @@
+<!-- partials/header.html -->
+<header class="main-header">
+  <div class="container flex items-center justify-between py-4">
+    <!-- LOGO -->
+    <a href="../intro/index.html" class="logo flex items-center gap-3">
+      <div class="logo-icon">
+        <i class="fas fa-home text-cyan-400 text-2xl"></i>
+      </div>
+      <span class="logo-text">
+        <span class="gradient-syed">SYED</span> AI
+      </span>
+    </a>
+
+    <!-- NAV -->
+    <nav class="nav-links hidden md:flex items-center gap-8">
+      <a href="../pages/host/host.html" class="nav-link">Host</a>
+      <a href="../pages/guest/search.html" class="nav-link">Stay</a>
+      <a href="../pages/owner/dashboard.html" class="nav-link" id="owner-link" style="display:none;">Owner</a>
+    </nav>
+
+    <!-- USER MENU -->
+    <div class="user-menu flex items-center gap-4">
+      <button id="theme-toggle" class="theme-btn">
+        <i class="fas fa-moon"></i>
+      </button>
+
+      <div class="dropdown relative" id="user-dropdown">
+        <button class="user-btn">
+          <i class="fas fa-user-circle text-3xl text-cyan-400"></i>
+        </button>
+        <div class="dropdown-menu">
+          <div id="auth-links">
+            <a href="../auth/login.html" class="dropdown-item">Login</a>
+            <a href="../auth/signup.html" class="dropdown-item">Sign Up</a>
+          </div>
+          <div id="user-links" class="hidden">
+            <a href="../pages/host/property-owner-dashboard.html" class="dropdown-item">Dashboard</a>
+            <a href="../pages/guest/guest-bookings.html" class="dropdown-item">Bookings</a>
+            <hr class="my-2 border-gray-700">
+            <button id="logout-btn" class="dropdown-item text-red-400">Logout</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <button class="mobile-menu-btn md:hidden">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav hidden">
+    <a href="../pages/host/host.html" class="mobile-link">Host</a>
+    <a href="../pages/guest/search.html" class="mobile-link">Stay</a>
+    <a href="../pages/owner/dashboard.html" class="mobile-link" id="mobile-owner-link" style="display:none;">Owner</a>
+  </div>
+</header>

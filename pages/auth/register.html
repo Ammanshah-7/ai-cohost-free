@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Register | SYED CO-HOST</title>
+
+  <!-- FONTS & ICONS -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../core/css/airbnb.css" />
+  <link rel="stylesheet" href="auth.css" />
+
+  <!-- AI BRAIN: SELF-HEALING + PWA + ERROR LOGGING -->
+  <script src="../core/js/self-heal.js" defer></script>
+
+  <!-- SOCKET.IO FOR REAL-TIME AI -->
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+
+  <!-- HEADER AUTO-INJECTED BY self-heal.js -->
+  <div id="header"></div>
+
+  <!-- MAIN REGISTER CARD -->
+  <div class="container py-20">
+    <div class="quantum-card max-w-md mx-auto p-8 shadow-2xl">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl font-bold text-cyan-400 mb-2">Create Neural Account</h1>
+        <p class="text-gray-400">Join the AI-Powered Co-Hosting Revolution</p>
+      </div>
+
+      <!-- VOICE REGISTRATION BUTTON -->
+      <button 
+        id="voice-register-btn" 
+        class="neural-btn w-full py-4 text-lg font-semibold flex items-center justify-center gap-3 mb-6"
+        onclick="startVoiceRegister()"
+      >
+        <i class="fas fa-microphone"></i> Register with Voice
+      </button>
+
+      <!-- MANUAL REGISTRATION FORM -->
+      <form id="register-form" class="space-y-4">
+        <input 
+          type="text" 
+          name="name" 
+          placeholder="Full Name" 
+          required 
+          class="w-full px-4 py-3 bg-gray-900 border border-cyan-500/50 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none text-white"
+        />
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="Email Address" 
+          required 
+          class="w-full px-4 py-3 bg-gray-900 border border-cyan-500/50 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none text-white"
+        />
+        <input 
+          type="tel" 
+          name="phone" 
+          placeholder="Phone (e.g. +923001234567)" 
+          required 
+          class="w-full px-4 py-3 bg-gray-900 border border-cyan-500/50 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none text-white"
+        />
+        <input 
+          type="password" 
+          name="password" 
+          placeholder="Password (8+ chars)" 
+          minlength="8" 
+          required 
+          class="w-full px-4 py-3 bg-gray-900 border border-cyan-500/50 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:outline-none text-white"
+        />
+        <div class="flex items-center gap-2">
+          <input type="checkbox" id="terms" required class="w-5 h-5 text-cyan-400" />
+          <label for="terms" class="text-sm text-gray-400">
+            I agree to the <a href="../legal/terms.html" class="text-cyan-400 underline">Terms</a> & 
+            <a href="../legal/privacy.html" class="text-cyan-400 underline">Privacy</a>
+          </label>
+        </div>
+        <button 
+          type="submit" 
+          class="neural-btn w-full py-3 font-bold text-lg"
+        >
+          Register with AI
+        </button>
+      </form>
+
+      <!-- LOGIN LINK -->
+      <p class="text-center mt-6 text-gray-400">
+        Already have an account? 
+        <a href="login.html" class="text-cyan-400 hover:text-cyan-300 underline font-semibold">Login</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- AI CHAT WIDGET -->
+  <div id="chat-widget" class="fixed bottom-6 right-6 z-50"></div>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Global API URL from self-heal.js
+    const API_URL = 'https://syedcohost.onrender.com';
+
+    // MANUAL REGISTRATION
+    document.getElementById('register-form').onsubmit = async (e) => {
+      e.preventDefault();
+      const form = new FormData(e.target);
+      const data = Object.fromEntries(form);
+
+      // Client-side validation
+      if (!data.email.includes('@')) return alert('Invalid email');
+      if (data.password.length < 8) return alert('Password too short');
+      if (!data.phone.startsWith('+92')) return alert('Phone must start with +92');
+
+      try {
+        const res = await fetch(`${API_URL}/api/register`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const result = await res.json();
+
+        if (result.success || result.token) {
+          localStorage.setItem('token', result.token || 'temp');
+          alert('Registration Successful! Welcome to SYED AI');
+          window.location = '../host/property-owner-dashboard.html';
+        } else {
+          alert('Error: ' + (result.error || 'Try again'));
+        }
+      } catch (err) {
+        alert('Network error. Please try again.');
+      }
+    };
+  </script>
+
+  <script src="../core/js/core.js" defer></script>
+  <script src="ai/neural-auth.js" defer></script>
+</body>
+</html>

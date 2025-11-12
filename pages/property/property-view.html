@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="Luxury Villa Dubai">Luxury Villa Dubai</title>
+
+  <!-- FONTS & ICONS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- PARTIALS + CORE -->
+  <link rel="stylesheet" href="../partials/partials.css" />
+  <link rel="stylesheet" href="../core/css/airbnb.css" />
+
+  <!-- PAGE CSS -->
+  <link rel="stylesheet" href="property.css" />
+
+  <!-- AI BRAIN -->
+  <script src="../core/js/self-heal.js" defer></script>
+</head>
+<body>
+
+  <!-- HEADER (AUTO-INJECTED) -->
+  <div id="header"></div>
+
+  <!-- PROPERTY VIEW -->
+  <section class="container py-16">
+    <div class="max-w-6xl mx-auto">
+      <!-- IMAGE GALLERY -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="col-span-1 md:col-span-2">
+          <img src="../assets/villa-main.jpg" alt="Villa Main" class="w-full h-96 object-cover rounded-2xl shadow-2xl" />
+        </div>
+        <img src="../assets/villa-pool.jpg" alt="Pool" class="w-full h-48 object-cover rounded-2xl" />
+        <img src="../assets/villa-bedroom.jpg" alt="Bedroom" class="w-full h-48 object-cover rounded-2xl" />
+      </div>
+
+      <!-- PROPERTY CARD -->
+      <div class="quantum-card p-8">
+        <div class="flex flex-col md:flex-row justify-between items-start gap-6">
+          <!-- DETAILS -->
+          <div class="flex-1">
+            <h1 class="text-4xl font-bold text-white mb-2">Luxury Villa Dubai</h1>
+            <p class="text-xl text-gray-300 mb-4">
+              <i class="fas fa-map-marker-alt text-cyan-400"></i> Palm Jumeirah, Dubai
+            </p>
+            <div class="flex items-center gap-6 text-sm text-gray-400 mb-6">
+              <span><i class="fas fa-bed"></i> 5 Bedrooms</span>
+              <span><i class="fas fa-bath"></i> 6 Baths</span>
+              <span><i class="fas fa-users"></i> 12 Guests</span>
+              <span><i class="fas fa-wifi"></i> WiFi</span>
+            </div>
+            <p class="text-gray-300 leading-relaxed">
+              Experience ultimate luxury in this 5-bedroom beachfront villa with private pool, 
+              24/7 concierge, and AI-powered smart home system.
+            </p>
+          </div>
+
+          <!-- BOOKING BOX -->
+          <div class="md:w-96">
+            <div class="booking-box p-6 rounded-2xl border border-cyan-500/30">
+              <!-- PRICE + CURRENCY (AUTO-UPDATED) -->
+              <div class="flex justify-between items-center mb-4">
+                <p class="booking-price text-3xl font-bold text-white" data-base-price="299">$299</p>
+                <p class="text-sm text-gray-400">/ night</p>
+              </div>
+
+              <div class="space-y-4">
+                <button id="book-now" class="neural-btn primary w-full py-4 text-lg font-bold">
+                  <i class="fas fa-calendar-check"></i> Book Now
+                </button>
+
+                <button id="vr-tour" class="neural-btn ghost w-full py-4 text-lg font-bold">
+                  <i class="fas fa-vr-cardboard"></i> 360° VR Tour
+                </button>
+              </div>
+
+              <!-- AI INSIGHTS -->
+              <div class="ai-insights mt-6 p-4 rounded-xl text-sm">
+                <p class="text-cyan-300 font-bold mb-2"><i class="fas fa-brain"></i> AI Insights</p>
+                <p>• 97% occupancy last month</p>
+                <p>• $42,000 avg. monthly revenue</p>
+                <p>• 4.9/5 guest rating</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAT WIDGET -->
+  <div id="chat-widget" class="fixed bottom-6 right-6 z-50"></div>
+
+  <!-- SCRIPTS -->
+  <script src="../partials/partials.js" defer></script>
+  <script src="property.js" defer></script>
+  <script src="ai/virtual-tour.js" defer></script>
+  <script src="../core/js/core.js" defer></script>
+  <script src="../core/js/language.js" defer></script>
+</body>
+</html>

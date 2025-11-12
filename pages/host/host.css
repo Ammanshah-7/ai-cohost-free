@@ -1,0 +1,97 @@
+/* pages/host/host.css — FINAL SHARED STYLES v9999.9 */
+:root {
+  --cyan: #00d4ff;
+  --pink: #ff00c8;
+  --purple: #8b5cf6;
+  --dark: #0f0c29;
+  --card-bg: rgba(26, 26, 46, 0.9);
+  --border: rgba(0, 212, 255, 0.3);
+  --text-gradient: linear-gradient(90deg, var(--cyan), var(--pink));
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: #0a0a1a;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* HERO */
+.host-hero {
+  background: 
+    radial-gradient(circle at 30% 20%, rgba(0, 212, 255, 0.2), transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(255, 0, 200, 0.15), transparent 50%),
+    linear-gradient(135deg, #0f0c29 0%, #1a1a2e 50%, #24243e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-host {
+  font-family: 'Orbitron', sans-serif;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+}
+
+/* CARDS */
+.quantum-card, .quantum-stat {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  transition: all 0.4s ease;
+}
+
+.quantum-card:hover, .quantum-stat:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+  transform: translateY(-8px);
+}
+
+/* BUTTONS */
+.neural-btn, .empire-btn {
+  background: linear-gradient(45deg, var(--cyan), var(--purple));
+  color: white;
+  font-weight: 700;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 212, 255, 0.4);
+  transition: all 0.4s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  text-decoration: none;
+}
+
+.neural-btn:hover, .empire-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 212, 255, 0.6);
+}
+
+/* TEXT GRADIENT */
+.text-gradient {
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn { animation: fadeInUp 0.6s ease-out; }

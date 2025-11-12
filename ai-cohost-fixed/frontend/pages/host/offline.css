@@ -1,0 +1,13 @@
+/* pages/offline/offline.css */
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+.neural-btn.primary {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+}
+
+.neural-btn.primary:hover {
+  box-shadow: 0 15px 35px rgba(220, 38, 38, 0.5);
+}

@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@100..900&display=swap');
+
+/* ─────────────────────────────────────────── */
+/* VARIABLES                                   */
+/* ─────────────────────────────────────────── */
+:root {
+  --airbnb: #FF385C;
+  --quantum: #00D4FF;
+  --neural: #7C3AED;
+
+  --bg: #0a0a1a;
+  --card: #1a1a2e;
+  --text: #e0e0ff;
+  --border: #33334d;
+
+  --glow: 0 0 30px rgba(0,212,255,0.4);
+  --font: 'Inter', sans-serif;
+  --hologram: rgba(0,212,255,0.15);
+
+  --radius: 24px;
+  --transition: 0.45s ease;
+}
+
+/* LIGHT THEME */
+[data-theme="light"] {
+  --bg: #f8f9ff;
+  --card: #ffffff;
+  --text: #1a1a2e;
+  --border: #e0e0e0;
+
+  --glow: 0 0 20px rgba(255,56,92,0.3);
+  --hologram: rgba(255,56,92,0.1);
+}
+
+/* ─────────────────────────────────────────── */
+/* GLOBAL                                      */
+/* ─────────────────────────────────────────── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  transition: var(--transition);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--quantum);
+  color: #fff;
+}
+
+/* ─────────────────────────────────────────── */
+/* LAYOUT                                      */
+/* ─────────────────────────────────────────── */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.neural-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 40px 0;
+}
+
+/* ─────────────────────────────────────────── */
+/* CARD COMPONENT                              */
+/* ─────────────────────────────────────────── */
+.quantum-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--glow);
+  transition: var(--transition);
+  position: relative;
+  backdrop-filter: blur(12px);
+
+  /* Prevent layout jumping */
+  transform: translateZ(0);
+}
+
+.quantum-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--hologram);
+  opacity: 0;
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.quantum-card:hover::before {
+  opacity: 1;
+}
+
+.quantum-card:hover {
+  transform: translateY(-16px) scale(1.02) translateZ(0);
+}
+
+/* ─────────────────────────────────────────── */
+/* BUTTON                                      */
+/* ─────────────────────────────────────────── */
+.neural-btn {
+  background: linear-gradient(45deg, var(--airbnb), var(--quantum));
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: 0 0 18px rgba(0,212,255,0.3);
+  letter-spacing: 0.5px;
+}
+
+.neural-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  transition: 0.6s;
+}
+
+.neural-btn:hover::before {
+  left: 100%;
+}
+
+.neural-btn:hover {
+  box-shadow: 0 0 30px rgba(0,212,255,0.6),
+              0 0 20px rgba(255,56,92,0.4);
+  transform: translateY(-4px);
+}
+
+/* ─────────────────────────────────────────── */
+/* RESPONSIVE                                  */
+/* ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .neural-grid {
+    grid-template-columns: 1fr;
+  }
+}

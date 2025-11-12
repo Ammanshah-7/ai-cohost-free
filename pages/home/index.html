@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SYED CO-HOST AI | Find Your Stay</title>
+
+  <!-- FONTS & ICONS -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../core/css/airbnb.css" />
+  <link rel="stylesheet" href="D:\ai-cohost-free\pages\home\home.css" />
+
+  <!-- PWA MANIFEST -->
+  <link rel="manifest" href="../static/manifest.json" />
+
+  <!-- AI BRAIN: SELF-HEALING + PWA + ERROR LOGGING -->
+  <script src="../core/js/self-heal.js" defer></script>
+
+  <!-- SOCKET.IO FOR REAL-TIME AI -->
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+
+  <!-- HEADER AUTO-INJECTED BY self-heal.js -->
+  <div id="header"></div>
+
+  <!-- NEURAL HERO SECTION -->
+  <section class="neural-hero py-24">
+    <div class="container text-center">
+      <h1 class="ai-title text-5xl md:text-7xl font-bold mb-8">
+        AI Finds Your <span class="gradient-text">Dream Stay</span>
+      </h1>
+      <p class="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+        Just speak or type — our AI understands your needs and finds the perfect property in seconds.
+      </p>
+
+      <!-- VOICE + TEXT SEARCH BAR -->
+      <div class="neural-search-bar max-w-4xl mx-auto flex flex-col md:flex-row gap-4 items-center">
+        <div class="relative flex-1 w-full">
+          <input 
+            type="text" 
+            id="ai-input" 
+            placeholder="Say: 'Villa in Dubai, 3 nights, pool, under $200'" 
+            class="w-full px-6 py-5 text-lg bg-gray-900/80 border border-cyan-500/30 rounded-2xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-gray-400 transition-all"
+          />
+          <button 
+            id="voice-search-btn" 
+            class="absolute right-4 top-1/2 -translate-y-1/2 text-cyan-400 hover:text-cyan-300 transition"
+            onclick="toggleVoiceSearch()"
+            title="Voice Search"
+          >
+            <i class="fas fa-microphone text-2xl"></i>
+          </button>
+        </div>
+        <button 
+          class="neural-btn px-10 py-5 text-lg font-bold flex items-center gap-3"
+          onclick="search()"
+        >
+          <i class="fas fa-search"></i> Search
+        </button>
+      </div>
+
+      <!-- VOICE STATUS -->
+      <div id="voice-status" class="mt-4 text-sm text-gray-400"></div>
+    </div>
+  </section>
+
+  <!-- SEARCH RESULTS GRID -->
+  <section class="container py-12">
+    <div id="results" class="neural-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Results injected by neural-search.js -->
+    </div>
+  </section>
+
+  <!-- AI CHAT WIDGET -->
+  <div id="chat-widget" class="fixed bottom-6 right-6 z-50"></div>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Global API URL from self-heal.js
+    const API_URL = 'https://syedcohost.onrender.com';
+
+    // Search function
+    window.search = async () => {
+      const query = document.getElementById('ai-input').value.trim();
+      if (!query) return alert('Please enter or speak your request.');
+
+      showLoading();
+      try {
+        const res = await fetch(`${API_URL}/api/ai-search`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query })
+        });
+        const data = await res.json();
+        displayResults(data.properties || []);
+      } catch (err) {
+        showError('Search failed. Try again.');
+      }
+    };
+
+    // Display results
+    function displayResults(properties) {
+      const results = document.getElementById('results');
+      if (!properties.length) {
+        results.innerHTML = `<p class="col-span-full text-center text-gray-400">No properties found. Try: "Luxury villa in Dubai"</p>`;
+        return;
+      }
+
+      results.innerHTML = properties.map(p => `
+        <div class="quantum-card p-6 rounded-2xl hover:scale-105 transition-transform cursor-pointer" onclick="book('${p.id}')">
+          <img src="${p.image}" alt="${p.title}" class="w-full h-48 object-cover rounded-xl mb-4" />
+          <h3 class="text-xl font-bold text-cyan-400">${p.title}</h3>
+          <p class="text-gray-300">${p.location}</p>
+          <p class="text-2xl font-bold text-white mt-2">$${p.price}<span class="text-sm text-gray-400">/night</span></p>
+          <div class="flex items-center gap-2 mt-3">
+            <i class="fas fa-star text-yellow-400"></i>
+            <span class="text-sm">${p.rating || '4.9'}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function book(id) {
+      localStorage.setItem('selectedProperty', id);
+      window.location = '../payments/checkout.html';
+    }
+
+    function showLoading() {
+      document.getElementById('results').innerHTML = `
+        <div class="col-span-full text-center py-20">
+          <i class="fas fa-brain text-6xl text-cyan-400 animate-pulse"></i>
+          <p class="mt-4 text-xl text-gray-300">AI is searching the best properties...</p>
+        </div>`;
+    }
+
+    function showError(msg) {
+      document.getElementById('results').innerHTML = `<p class="col-span-full text-center text-red-400">${msg}</p>`;
+    }
+  </script>
+
+  <script src="../core/js/core.js" defer></script>
+  <script src="D:\ai-cohost-free\pages\home\ai\neural-search-ai.js" defer></script>
+</body>
+</html>

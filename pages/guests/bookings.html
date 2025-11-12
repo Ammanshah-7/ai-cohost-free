@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Bookings | SYED AI</title>
+
+  <!-- FONTS & ICONS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../core/css/airbnb.css" />
+  <link rel="stylesheet" href="guest.css" />
+  <link rel="stylesheet" href="bookings.css" />
+
+  <!-- AI BRAIN -->
+  <script src="../core/js/self-heal.js" defer></script>
+
+  <!-- SOCKET.IO -->
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <section class="container py-16">
+    <div class="flex justify-between items-center mb-12">
+      <div>
+        <h1 class="text-5xl font-bold text-cyan-400 mb-2">My Bookings</h1>
+        <p class="text-xl text-gray-300">Manage, cancel, or review your stays</p>
+      </div>
+      <button onclick="refreshBookings()" class="neural-btn px-6 py-3 flex items-center gap-2">
+        <i class="fas fa-sync-alt"></i> Refresh
+      </button>
+    </div>
+
+    <div id="bookings-list" class="space-y-6">
+      <!-- Bookings injected by bookings.js -->
+    </div>
+
+    <div id="empty-state" class="text-center py-20 hidden">
+      <i class="fas fa-suitcase-rolling text-6xl text-gray-500 mb-4"></i>
+      <p class="text-xl text-gray-400">No bookings yet.</p>
+      <a href="search.html" class="neural-btn mt-6 inline-flex items-center gap-2">
+        <i class="fas fa-search"></i> Find a Stay
+      </a>
+    </div>
+  </section>
+
+  <div id="chat-widget" class="fixed bottom-6 right-6 z-50"></div>
+
+  <script src="bookings.js" defer></script>
+  <script src="../core/js/core.js" defer></script>
+</body>
+</html>
